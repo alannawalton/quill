@@ -104,7 +104,7 @@ function calculateStats(){
         newStats.confirmed += user.status.confirmed ? 1 : 0;
 
         // Count confirmed that are Howard Students
-        newStats.confirmedHoward += user.status.confirmed && email === "howard.edu" ? 1 : 0;
+        newStats.confirmedHoward += user.status.confirmed && email === "bison.howard.edu" ? 1 : 0;
 
         newStats.confirmedFemale += user.status.confirmed && user.profile.gender == "F" ? 1 : 0;
         newStats.confirmedMale += user.status.confirmed && user.profile.gender == "M" ? 1 : 0;
