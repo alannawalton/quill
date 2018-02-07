@@ -14,10 +14,10 @@ angular.module('reg')
       $scope.user = currentUser.data;
 
       // Is the student from MIT?
-      $scope.isMitStudent = $scope.user.email.split('@')[1] == 'mit.edu';
+      $scope.isHowardStudent = $scope.user.email.split('@')[1] == 'howard.edu';
 
       // If so, default them to adult: true
-      if ($scope.isMitStudent){
+      if ($scope.isHowardStudent){
         $scope.user.profile.adult = true;
       }
 
@@ -144,6 +144,15 @@ angular.module('reg')
                 {
                   type: 'empty',
                   prompt: 'Please select a gender.'
+                }
+              ]
+            },
+            resume: {
+              identifier: 'resume',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please provide a link to your resume.'
                 }
               ]
             },
