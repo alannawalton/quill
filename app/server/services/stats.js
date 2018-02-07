@@ -66,9 +66,6 @@ function calculateStats(){
     hostNeededOther: 0,
     hostNeededNone: 0,
 
-    reimbursementTotal: 0,
-    reimbursementMissing: 0,
-
     wantsHardware: 0,
 
     checkedIn: 0
@@ -114,13 +111,6 @@ function calculateStats(){
         // Count declined
         newStats.declined += user.status.declined ? 1 : 0;
 
-        // Count the number of people who need reimbursements
-        newStats.reimbursementTotal += user.confirmation.needsReimbursement ? 1 : 0;
-
-        // Count the number of people who still need to be reimbursed
-        newStats.reimbursementMissing += user.confirmation.needsReimbursement &&
-          !user.status.reimbursementGiven ? 1 : 0;
-
         // Count the number of people who want hardware
         newStats.wantsHardware += user.confirmation.wantsHardware ? 1 : 0;
 
@@ -143,13 +133,13 @@ function calculateStats(){
           newStats.demo.year[user.profile.graduationYear] += 1;
         }
 
-        // Grab the team name if there is one
-        // if (user.teamCode && user.teamCode.length > 0){
-        //   if (!newStats.teams[user.teamCode]){
-        //     newStats.teams[user.teamCode] = [];
-        //   }
-        //   newStats.teams[user.teamCode].push(user.profile.name);
-        // }
+        //Grab the team name if there is one
+        if (user.teamCode && user.teamCode.length > 0){
+          if (!newStats.teams[user.teamCode]){
+            newStats.teams[user.teamCode] = [];
+          }
+          newStats.teams[user.teamCode].push(user.profile.name);
+        }
 
         // Count shirt sizes
         if (user.confirmation.shirtSize in newStats.shirtSizes){
@@ -209,15 +199,15 @@ function calculateStats(){
         newStats.demo.schools = schools;
 
         // Likewise, transform the teams into an array of objects
-        // var teams = [];
-        // _.keys(newStats.teams)
-        //   .forEach(function(key){
-        //     teams.push({
-        //       name: key,
-        //       users: newStats.teams[key]
-        //     });
-        //   });
-        // newStats.teams = teams;
+        var teams = [];
+        _.keys(newStats.teams)
+          .forEach(function(key){
+          teams.push({
+            name: key,
+            users: newStats.teams[key]
+          });
+        });
+        newStats.teams = teams;
 
         console.log('Stats updated!');
         newStats.lastUpdated = new Date();
