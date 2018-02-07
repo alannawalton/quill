@@ -247,10 +247,8 @@
           {{team.name}}
         </div>
         {{team.users.join(', ')}}
-        {{stats}}
-        {{team.teammates}}
         <p
-            ng-repeat="user in teammates"
+            ng-repeat="user in stats.teams.users"
             class="item">
             {{user.profile.name || 'Somebody (has not filled out their profile!)'}}
           </p>
