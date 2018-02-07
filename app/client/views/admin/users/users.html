@@ -196,20 +196,6 @@
 
             <td
               class="collapsing">
-              <span ng-if="user.status.confirmed">
-                <i
-                  ng-if="user.confirmation.needsReimbursement && !user.status.reimbursementGiven"
-                  class="red money icon">
-                </i>
-                <i
-                  ng-if="user.confirmation.needsReimbursement && user.status.reimbursementGiven"
-                  class="green money icon">
-                </i>
-              </span>
-            </td>
-
-            <td
-              class="collapsing">
               <button
                 ng-click="goUser($event, user)"
                 class="ui circular mini basic icon button">
