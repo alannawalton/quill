@@ -247,13 +247,6 @@
           {{team.name}}
         </div>
         {{team.users.join(', ')}}
-        {{team.users}}
-        <p
-            ng-repeat="user in stats.teams.users"
-            class="item">
-            {{user.profile.name || 'Somebody (has not filled out their profile!)'}}
-          </p>
-        {{stats | json}}
       </div>
     </div>
   </div>
