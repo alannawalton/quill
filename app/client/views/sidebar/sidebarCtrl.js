@@ -25,9 +25,9 @@ angular.module('reg')
         $scope.showSidebar = !$scope.showSidebar;
       };
 
-      // oh god jQuery hack
-      $('.item').on('click', function(){
-        $scope.showSidebar = false;
-      });
+//       // oh god jQuery hack
+//       $('.item').on('click', function(){
+//         $scope.showSidebar = false;
+//       });
 
     }]);
