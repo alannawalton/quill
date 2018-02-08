@@ -22,7 +22,7 @@ angular.module('reg')
 
       $scope.showSidebar = false;
       $scope.toggleSidebar = function(){
-        $scope.showSidebar = true;
+        $scope.showSidebar = false;
       };
 
 //       // oh god jQuery hack
