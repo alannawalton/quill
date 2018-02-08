@@ -22,14 +22,8 @@ angular.module('reg')
 
       $scope.showSidebar = false;
       $scope.toggleSidebar = function(){
-        console.log("Clicking things");
-        if $scope.showSidebar == false {
-           $scope.showSidebar = true;
-        }
-        if $scope.showSidebar == true {
-           $scope.showSidebar = false;
-        }
-       
+        console.log("Clicked a thing");
+         $scope.showSidebar = false;
       };
 
 //       // oh god jQuery hack
