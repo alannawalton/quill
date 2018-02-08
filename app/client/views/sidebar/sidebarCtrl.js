@@ -20,10 +20,10 @@ angular.module('reg')
         AuthService.logout();
       };
 
-//       $scope.showSidebar = false;
-//       $scope.toggleSidebar = function(){
-//         $scope.showSidebar = !$scope.showSidebar;
-//       };
+      $scope.showSidebar = false;
+      $scope.toggleSidebar = function(){
+        $scope.showSidebar = !$scope.showSidebar;
+      };
 
 //       // oh god jQuery hack
 //       $('.item').on('click', function(){
